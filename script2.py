@@ -1,0 +1,12 @@
+import  sqlite3
+conn=sqlite3.connect('database.db')
+cursor1=conn.cursor()
+name=input('Enter Your Name:')
+email=input('Enter Your Email:')
+phoneno=input('Enter Your PhoneNo:')
+age=input('Enter Your Age:')
+date=input('Enter Your Date Of Birth:')
+cursor1.execute("INSERT INTO data(name, email, phoneno,age,date)VALUES (?,?,?,?,?)", (name, email, phoneno,age,date))
+conn.commit ()
+print('Data entered successfully.')
+conn.close ()
